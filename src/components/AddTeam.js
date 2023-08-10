@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 const AddTeam = () => {
     const [title , setTitle] = useState("")
-    const [points , setPoints] = useState(0);
+    const [points , setPoints] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -25,6 +25,7 @@ const AddTeam = () => {
         }
 
         setTitle("");
+        setPoints("");
     }
   return (
     <div>
