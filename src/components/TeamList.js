@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import TeamDataService from "../services/team.services"
-
+import "../components/a.css"
 function TeamList() {
   const [Teams , setTeams]= useState([])
 
@@ -22,22 +22,48 @@ function TeamList() {
    
   return (
     <div>
-
-      {sortedTeams.map((doc , index ) =>{
+    <table className='tabs'>
+  <tr>
+    <th>Teams</th>
+    <th> Played </th>
+    <th>Won </th>
+    <th>Lost</th>
+    <th>Points</th>
+  </tr>
+  {sortedTeams.map((doc , index ) =>{
         if(doc.points){
           return (
-          
-          <div key={doc.id}>
-          <h2>{doc.title}</h2>
-
-          <h3>{doc.points}</h3>
-        </div>
-        
-      
+          <tr key={doc.id}>
+            <td>{doc.title}</td>
+            <td>{doc.played}</td>
+            <td>{doc.won}</td>
+            <td>{doc.lost}</td>
+            <td>{doc.points}</td>
+          </tr>
+    
       )
         }
        
       })}
+  
+
+</table>
+
+      {/* {sortedTeams.map((doc , index ) =>{
+        if(doc.points){
+          return (
+          <tr key={doc.id}>
+            <td>{doc.title}</td>
+            <td>{doc.played}</td>
+            <td>{doc.won}</td>
+            <td>{doc.lost}</td>
+            <td>{doc.points}</td>
+          </tr>
+    
+      )
+        }
+       
+      })} */}
 
 
     </div>

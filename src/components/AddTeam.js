@@ -5,6 +5,10 @@ import { useState } from 'react'
 const AddTeam = () => {
     const [title , setTitle] = useState("")
     const [points , setPoints] = useState("");
+    const [played , setPlayed] = useState("")
+    const [won , setWon] = useState("")
+    const [lost , setLost] = useState("")
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -15,7 +19,10 @@ const AddTeam = () => {
 
         const newTeam = {
             title ,
-            points
+            points ,
+            played ,
+            won ,
+            lost
         }
 
         try{
@@ -26,6 +33,9 @@ const AddTeam = () => {
 
         setTitle("");
         setPoints("");
+        setPlayed("");
+        setWon("");
+        setLost("");
     }
   return (
     <div>
@@ -40,7 +50,23 @@ const AddTeam = () => {
     placeholder="enter points"
     value={points}
     onChange={(e)=>setPoints(e.target.value)}></input>
+    <input
+    type="number"
+    placeholder="enter Matches played"
+    value={played}
+    onChange={(e)=>setPlayed(e.target.value)}></input>
+    <input
+    type="number"
+    placeholder="enter Matches  won "
+    value={won}
+    onChange={(e)=>setWon(e.target.value)}></input>
+       <input
+    type="number"
+    placeholder="enter Matches  Lost "
+    value={lost}
+    onChange={(e)=>setLost(e.target.value)}></input>
     <button type='submit'>submit</button>
+  
     </form>
     </div>
   )

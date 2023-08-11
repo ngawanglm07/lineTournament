@@ -8,7 +8,7 @@ import {
 
 
 
-const teamCollectionRef = collection(db , "team");
+const teamCollectionRef = collection(db , "linee");
 
 class TeamDataService{
   addTeam = (newTeam) => {
